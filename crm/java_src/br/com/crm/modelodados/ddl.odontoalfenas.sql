@@ -3,7 +3,7 @@ spool ddl.crm.txt
 drop user crm cascade;
 
 --Ao cria o usuario cria automaticamente o schema
--- Schema � um contanier 
+-- Schema é um contanier de objetos
 create user crm identified by crm;
 
 -- DCL - Data Control Language
@@ -283,14 +283,6 @@ create table tb_matricula(
 	id_matricula			number(18,0)		not null		constraint pk_matricula primary key,
 )
 
-
-
-
--- create table ht_paciente()
-
---tb_cep_bairro_logradouro
-
---tb_regiao
 
 spool off
 exit

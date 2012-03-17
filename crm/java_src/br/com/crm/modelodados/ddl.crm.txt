@@ -1,0 +1,181 @@
+drop user crm cascade
+          *
+ERRO na linha 1:
+ORA-01918: o usuário 'CRM' não existe 
+
+
+
+Usuário criado.
+
+
+Concessão bem-sucedida.
+
+Conectado.
+
+Tabela criada.
+
+
+Tabela criada.
+
+
+Tabela criada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência eliminada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela criada.
+
+
+Tabela criada.
+
+
+Tabela criada.
+
+
+Tabela criada.
+
+
+Tabela criada.
+
+
+Tabela alterada.
+
+
+Tabela criada.
+
+
+Tabela alterada.
+
+
+Tabela criada.
+
+
+Tabela criada.
+
+
+Tabela alterada.
+
+
+Tabela criada.
+
+
+Tabela criada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela alterada.
+
+
+Tabela criada.
+
+
+Tabela criada.
+
+
+Tabela criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Seqüência criada.
+
+
+Tabela alterada.
+
