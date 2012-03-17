@@ -1,15 +1,15 @@
-spool ddl.odontoalfenas.txt
+spool ddl.crm.txt
 
-drop user odontoalfenas cascade;
+drop user crm cascade;
 
 --Ao cria o usuario cria automaticamente o schema
--- Schema é um contanier 
-create user odontoalfenas identified by odontoalfenas;
+-- Schema ï¿½ um contanier 
+create user crm identified by crm;
 
 -- DCL - Data Control Language
-grant connect,resource to odontoalfenas;
+grant connect,resource to crm;
 
-connect odontoalfenas/odontoalfenas
+connect crm/crm
 --------------------------------------------------------------------------------
 --------------------------- Data Definition Language ---------------------------
 -------------------------------------- DDL -------------------------------------
@@ -57,12 +57,12 @@ alter table tb_filiacao	add constraint fk_filiacao_aluno foreign key(id_aluno) 	
 	
 -- SEQUENCE
 -- Importante saber que uma sequence pode ser usado para mais de uma tabela.
-create sequence odontoalfenas.sq_filiacao increment by 1 start with 100;
-create sequence odontoalfenas.sq_tutor increment by 1 start with 100;
-create sequence odontoalfenas.sq_aluno increment by 1 start with 100;
-create sequence odontoalfenas.sq_bozo increment by 1 start with 100;
---deleta a sequence - não funciona o delete somente drop
-drop sequence odontoalfenas.sq_bozo;
+create sequence crm.sq_filiacao increment by 1 start with 100;
+create sequence crm.sq_tutor increment by 1 start with 100;
+create sequence crm.sq_aluno increment by 1 start with 100;
+create sequence crm.sq_bozo increment by 1 start with 100;
+--deleta a sequence - nï¿½o funciona o delete somente drop
+drop sequence crm.sq_bozo;
 
 -- CHECK
 alter table tb_aluno add constraint ck_aluno_sexo check(in_sexo in('M','F'));
@@ -84,7 +84,7 @@ alter table tb_aluno add constraint ck_aluno_estado_civil check(in_estado_civil 
 ------------------------------ CREATE, ALTER, DROP -----------------------------
 -------------------------------- GRUPO DOMICILIO -------------------------------
 --------------------------------------------------------------------------------
--- Por padrão SQL Plus e SQL Developer converte tudo que nao esteja entre aspas dupla para de lowercase para upper.
+-- Por padrï¿½o SQL Plus e SQL Developer converte tudo que nao esteja entre aspas dupla para de lowercase para upper.
 -- Maximo 30 caracteres e pode ter letras, numeros, _, $ e #. 
 create table tb_pais(
 	id_pais							number(18,0)				not null 		constraint pk_pais		primary key,-- PK
@@ -95,7 +95,7 @@ create table tb_pais(
 
 create table tb_estado(
 	id_estado						number(18,0)				not null 		constraint pk_estado	primary key,-- PK
-	tx_estado						varchar2(100)				not null,-- São Paulo
+	tx_estado						varchar2(100)				not null,-- Sï¿½o Paulo
 	in_sigla2						char(2)						not null,-- SP
 	id_pais							number(18,0)				not null,--FK
 	id_regiao						number(18,0)				not null--FK
@@ -109,7 +109,7 @@ create table tb_regiao(
 create table tb_cidade(
 	--Id da cidade conforme o IBGE
 	id_cidade						number(18,0)				not null		constraint pk_cidade	primary key,-- 1
-	tx_cidade						varchar2(100)				not null,-- São paulo
+	tx_cidade						varchar2(100)				not null,-- Sï¿½o paulo
 	id_estado						number(18,0)				not null,--FK
 	constraint fk_cidade_estado		foreign key(id_estado) 		references tb_estado(id_estado)
 );
@@ -124,7 +124,7 @@ create table tb_bairro(
 
 alter table tb_bairro add constraint ck_bairro_oficial check(in_oficial in('S','N'));
 -- S = BAIRRO OFICIAL
--- N = BAIRRO NÃO OFICIAL
+-- N = BAIRRO Nï¿½O OFICIAL
 
 create table tb_cep(
 	id_cep							number(18,0)				not null		constraint pk_cep	primary key,-- 1
@@ -135,7 +135,7 @@ create table tb_cep(
 );
 alter table tb_cep add constraint ck_cep_oficial check(in_oficial in('S','N'));
 -- S = CEP OFICIAL
--- N = CEP NÃO OFICIAL
+-- N = CEP Nï¿½O OFICIAL
 
 --Tipo de Rua = Rua, Avenida, Alameda.
 create table tb_logradouro_tipo(
@@ -155,14 +155,14 @@ create table tb_logradouro(
 );
 alter table tb_logradouro add constraint ck_logradouro_oficial check(in_oficial in('S','N'));
 -- S = LOGRADOURO OFICIAL
--- N = LOGRADOURO NÃO OFICIAL
+-- N = LOGRADOURO Nï¿½O OFICIAL
 
 create table tb_complemento_tipo(
 	id_complemento_tipo				number(18,0)				not null 				constraint pk_complemento_tipo	primary key,
 	tx_complemento_tipo				varchar2(200)				not null-- APTO/CASA/SOBRADO
 );
 
---o domicilio civil é o lugar em que a pessoa ordinariamente exerce seus direitos e cumpre suas obrigações da vida civil, inclusive --quando chamada a fazê-lo por via judicial, uma vez que do domicílio decorre a fixação da competência de foro para o julgamento de --ações em que a pessoa figura como parte. Tem o domicílio eleitoral
+--o domicilio civil ï¿½ o lugar em que a pessoa ordinariamente exerce seus direitos e cumpre suas obrigaï¿½ï¿½es da vida civil, inclusive --quando chamada a fazï¿½-lo por via judicial, uma vez que do domicï¿½lio decorre a fixaï¿½ï¿½o da competï¿½ncia de foro para o julgamento de --aï¿½ï¿½es em que a pessoa figura como parte. Tem o domicï¿½lio eleitoral
 create table tb_domicilio(
 	id_domicilio						number(18,0)				not null			constraint pk_domicilio		primary key,
 	in_domicilio_tipo					varchar2(50)				not null,-- Civil/Eleitoral/Anonimo
@@ -171,7 +171,7 @@ create table tb_domicilio(
 	tx_travessa_1						varchar2(200)				not null,-- Rua Araritaguaba
 	tx_travessa_2						varchar2(200)				not null,-- Rua Morango
 	tx_complemento						varchar2(200)				not null,-- O numero antigo da casa era 250C
-	tx_ponto_referencia					varchar2(200)				not null, -- Viaduto curuça
+	tx_ponto_referencia					varchar2(200)				not null, -- Viaduto curuï¿½a
 	id_complemento_tipo					number(18,0)				not null, --FK
 	id_logradouro						number(18,0)				not null
 );
@@ -186,18 +186,18 @@ alter table tb_cep 		  add constraint fk_cep_bairro					foreign key(id_bairro) 	
 alter table tb_bairro	  add constraint fk_bairro_cidade				foreign key(id_cidade) 					references tb_cidade(id_cidade);
 
 -- SEQUENCE
-create sequence odontoalfenas.sq_pais 				increment by 1 start with 100;
-create sequence odontoalfenas.sq_estado 			increment by 1 start with 100;
+create sequence crm.sq_pais 				increment by 1 start with 100;
+create sequence crm.sq_estado 			increment by 1 start with 100;
 -- Uma sequence pode ser alterada atraves do alter sequence;
--- ALTER SEQUENCE odontoalfenas.sq_estado   MAXVALUE 30;
-create sequence odontoalfenas.sq_cidade 			increment by 1 start with 500000;
-create sequence odontoalfenas.sq_regiao				increment by 1 start with 100;
-create sequence odontoalfenas.sq_bairro 			increment by 1 start with 100;
-create sequence odontoalfenas.sq_cep 				increment by 1 start with 100;
-create sequence odontoalfenas.sq_logradouro_tipo 	increment by 1 start with 100;
-create sequence odontoalfenas.sq_logradouro 		increment by 1 start with 100;
-create sequence odontoalfenas.sq_domicilio 			increment by 1 start with 100;
-create sequence odontoalfenas.sq_complemento_tipo	increment by 1 start with 100;
+-- ALTER SEQUENCE crm.sq_estado   MAXVALUE 30;
+create sequence crm.sq_cidade 			increment by 1 start with 500000;
+create sequence crm.sq_regiao				increment by 1 start with 100;
+create sequence crm.sq_bairro 			increment by 1 start with 100;
+create sequence crm.sq_cep 				increment by 1 start with 100;
+create sequence crm.sq_logradouro_tipo 	increment by 1 start with 100;
+create sequence crm.sq_logradouro 		increment by 1 start with 100;
+create sequence crm.sq_domicilio 			increment by 1 start with 100;
+create sequence crm.sq_complemento_tipo	increment by 1 start with 100;
 
 
 --------------------------------------------------------------------------------
@@ -251,9 +251,9 @@ create table tb_documento_campos(
 );
 
 -- SEQUENCE
-create sequence odontoalfenas.sq_documento 					increment by 1 start with 100;
-create sequence odontoalfenas.sq_documento_tipo 			increment by 1 start with 100;
-create sequence odontoalfenas.sq_documento_campos 			increment by 1 start with 100;
+create sequence crm.sq_documento 					increment by 1 start with 100;
+create sequence crm.sq_documento_tipo 			increment by 1 start with 100;
+create sequence crm.sq_documento_campos 			increment by 1 start with 100;
 
 -- FOREIGN KEY
 alter table tb_documento add constraint fk_documento		foreign key(id_documento_tipo) 		references tb_documento_tipo(id_documento_tipo);
