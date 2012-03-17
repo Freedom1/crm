@@ -1,5 +1,9 @@
 spool dml.crm.txt
 connect crm/crm
+
+--Antes de alterar verificar se o eclipse está abrindo no formato ISO-8859-1
+--Devido problema de acentuacao ao dar insert na base de dados.
+
 --------------------------------------------------------------------------------
 -------------------------- Data Manipulation Language --------------------------
 -------------------------------------- DML -------------------------------------
