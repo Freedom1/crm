@@ -1,8 +1,5 @@
-drop user crm cascade
-          *
-ERRO na linha 1:
-ORA-01918: o usuário 'CRM' não existe 
 
+Usuário eliminado.
 
 
 Usuário criado.
