@@ -25,9 +25,6 @@ public class PaisModel implements Serializable {
 	@Column(name="IN_SIGLA3")
 	private String inSigla3;
 
-	@Column(name="TX_CODIGO")
-	private String txCodigo;
-
 	@Column(name="TX_PAIS")
 	private String txPais;
 
@@ -56,14 +53,6 @@ public class PaisModel implements Serializable {
 
 	public void setInSigla3(String inSigla3) {
 		this.inSigla3 = inSigla3;
-	}
-
-	public String getTxCodigo() {
-		return this.txCodigo;
-	}
-
-	public void setTxCodigo(String txCodigo) {
-		this.txCodigo = txCodigo;
 	}
 
 	public String getTxPais() {
