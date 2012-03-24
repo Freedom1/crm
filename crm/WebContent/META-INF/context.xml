@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	minPoolSize 				= Numero minino de conexoes JDBC que C3PO mantem a todo tempo.
+	maxPoolSize 				= Numero maximo de conexoes. Uma excecao e lancada em tempo de execucao caso esgote.
+	user 						= Usuario da Conexao.
+	password					= Senha para Conexao.
+	driverClass					= Driver da classe de conexao.
+	description					= Descricao do DataSource.
+	name						= Nome do DataSource.
+	jdbcUrl						= Caminho da conexao JDBC.
+	type						= Tipo do DataSource do Pool de Conexao.Exemplo DBCP ou C3PO.
+	factory						= Classe responsavel por gerencia a criacao ?.
+	checkoutTimeout				= Tempo(milesimo) de aguardo de resposta para obter um pool(openSession()/).Caso erro retorna SQLException.
+	acquireIncrement			= Determina quantas conexoes simultaneas C3PO vai tentar obter quando o pool acabar.
+	auth						= Quem sera responsavel pelo pool Aplicacao ou o Container.
+	maxIdleTime					= Quanto tempo (segundos) uma conexão ociosa expira.Testar se expira conexoes cacheadas.
+	maxConnectionAge			= Quanto tempo (segundos) uma conexão ociosa expira e removida do pool.
+	unreturnedConnectionTimeout = Tempo(segundos) para remover conexões ociosa, ou que não foram fechadas.
+	automaticTestTable 			= Ira criar uma tabela com nome especificado para realizar testes de conexão.
+	idleConnectionTestPeriod	= Testa todos os pool ociosos.
+	numHelperThreads			= Numero de threads que pode ser executada simultaneamente
+	maxStatementsPerConnection 	= Numero de PrepareStatement por conexão.
+	maxStatements				= Numero de PrepareStatement Global.
+	autoCommitOnClose			= Comita automaticamente se a conexao for fechada.Depende do driver ter suporte.
+	acquireRetryAttempts		= Quantas vezes o C3PO vai tentar obter uma conexao antes de desistir.
+	acquireRetryDelay			= Tempo de espera entre as execucoes do acquireRetryAttempts em segundos.
+	breakAfterAcquireFailure	= Paralisa todas as conexão caso ocorra um erro ao obter uma conexao.
+	debugUnreturnedConnectionStackTraces =
+	initialPoolSize				= Tamanho do pool que deve ser inicializado deve estar entre o minimo e maximo.
+
+	Probe
+	B = Numero de conexões que não pode ser reusada. Não foram fechada até o momento ou não foi fechado no código.
+
+ -->
+
+<Context reloadable="true">
+	<!-- DESENVOLVIMENTO -->
+	<Resource
+		minPoolSize="1"
+		maxPoolSize="5"
+		initialPoolSize="1"
+		user="crm"
+		password="crm"
+		driverClass="oracle.jdbc.driver.OracleDriver"
+		description="Desenvolvimento"
+		name="hibernate/crmProducao"
+		jdbcUrl="jdbc:oracle:thin:@localhost:1521:xe"
+		type="com.mchange.v2.c3p0.ComboPooledDataSource"
+		factory="org.apache.naming.factory.BeanFactory"
+		checkoutTimeout="1000"
+		acquireIncrement="3"
+		acquireRetryDelay="1000"
+		acquireRetryAttempts="30"
+		auth="Container"
+		maxIdleTime="360"
+		unreturnedConnectionTimeout="540"
+		maxConnectionAge="0"
+		automaticTestTable="test_pool"
+		testConnectionOnCheckin="true"
+		testConnectionOnCheckout="true"
+		idleConnectionTestPeriod="30"
+		numHelperThreads="12"
+		maxStatementsPerConnection="15"
+		autoCommitOnClose="false"
+		breakAfterAcquireFailure="false"
+		debugUnreturnedConnectionStackTraces="false"
+		/>
+
+</Context>
