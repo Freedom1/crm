@@ -5,6 +5,7 @@
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/java_src"/>
         <wb-resource deploy-path="/" source-path="/flex_src"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/java_test"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/resources"/>
         <property name="context-root" value="crm"/>
         <property name="java-output-path" value="WebContent/WEB-INF/classes"/>
     </wb-module>
