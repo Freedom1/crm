@@ -13,24 +13,49 @@
 	</listener>
 
 	<!-- MessageBroker Servlet -->
+<!-- 	<servlet> -->
+<!-- 		<servlet-name>MessageBrokerServlet</servlet-name> -->
+<!-- 		<servlet-class>flex.messaging.MessageBrokerServlet</servlet-class> -->
+<!-- 		<init-param> -->
+<!-- 			<param-name>services.configuration.file</param-name> -->
+<!-- 			<param-value>/WEB-INF/flex/services-config.xml</param-value> -->
+<!-- 		</init-param> -->
+<!-- 		<init-param> -->
+<!-- 			<param-name>flex.write.path</param-name> -->
+<!-- 			<param-value>/WEB-INF/flex</param-value> -->
+<!-- 		</init-param> -->
+<!-- 		<load-on-startup>1</load-on-startup> -->
+<!-- 	</servlet> -->
+
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>MessageBrokerServlet</servlet-name> -->
+<!-- 		<url-pattern>/messagebroker/*</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+
+	<!-- MessageBroker Servlet -->
 	<servlet>
-		<servlet-name>MessageBrokerServlet</servlet-name>
-		<servlet-class>flex.messaging.MessageBrokerServlet</servlet-class>
+		<servlet-name>MessageBrokerSpring</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
 		<init-param>
-			<param-name>services.configuration.file</param-name>
-			<param-value>/WEB-INF/flex/services-config.xml</param-value>
-		</init-param>
-		<init-param>
-			<param-name>flex.write.path</param-name>
-			<param-value>/WEB-INF/flex</param-value>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>/WEB-INF/spring/*-config.xml</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-
+	
 	<servlet-mapping>
-		<servlet-name>MessageBrokerServlet</servlet-name>
+		<servlet-name>MessageBrokerSpring</servlet-name>
 		<url-pattern>/messagebroker/*</url-pattern>
 	</servlet-mapping>
+	
+	<!-- DATA SOURCE - PRODUCAO -->
+	<resource-ref>
+		<res-ref-name>hibernate/crmProducao</res-ref-name>
+		<res-type>javax.sql.DataSource</res-type>
+		<res-auth>Container</res-auth>
+		<res-sharing-scope>Shareable</res-sharing-scope>
+	</resource-ref>
+	
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
     <welcome-file>index.htm</welcome-file>
