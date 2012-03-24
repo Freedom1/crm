@@ -44,25 +44,33 @@ public interface IPaisDAO {
 	public long countPaisModels() throws DAOException;
 	
 	/**
-	 * @param entity
+	 * Salva a model: 'PaisModel'.
+	 * 
+	 * @param entity Entidade.
 	 * @throws DAOException Exception específica para DAO.
 	 */
 	public void savePaisModel(PaisModel entity) throws DAOException;
 	
 	/**
-	 * @param entity
+	 * Atualiza a model: 'PaisModel'.
+	 * 
+	 * @param entity Entidade.
 	 * @throws DAOException Exception específica para DAO.
 	 */
 	public void updatePaisModel(PaisModel entity) throws DAOException;
 	
 	/**
-	 * @param entity
+	 * Remove a model: 'PaisModel'.
+	 * 
+	 * @param entity Entidade.
 	 * @throws DAOException Exception específica para DAO.
 	 */
 	public void deletePaisModel(PaisModel entity) throws DAOException;
 	
 	/**
-	 * @param entityId
+	 * Remove a model: 'PaisModel' conforme o identificador.
+	 * 
+	 * @param id identificador.
 	 * @throws DAOException Exception específica para DAO.
 	 */
 	public void deletePaisModelById(Long id) throws DAOException;
