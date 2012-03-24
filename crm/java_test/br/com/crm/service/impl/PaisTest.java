@@ -5,6 +5,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.util.Assert;
 
 import br.com.crm.model.entity.PaisModel;
 import br.com.crm.service.IPaisService;
@@ -17,8 +18,9 @@ public class PaisTest {
 	IPaisService service;
 	
 	@Test
-	public void test(){
+	public void testFindPaisModel(){
 		PaisModel model= service.findPaisModel((long) 1);
+		Assert.notNull(model);
 		System.out.println(model.getTxPais());
 	}
 }
