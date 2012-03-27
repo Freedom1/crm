@@ -16,7 +16,9 @@
   <applications>
     <application path="crm.mxml"/>
   </applications>
-  <modules/>
+  <modules>
+    <module application="flex_src/crm.mxml" destPath="br/com/crm/module/login/LoginModule.swf" optimize="true" sourcePath="flex_src/br/com/crm/module/login/LoginModule.mxml"/>
+  </modules>
   <buildCSSFiles/>
   <flashCatalyst validateFlashCatalystCompatibility="false"/>
 </actionScriptProperties>
