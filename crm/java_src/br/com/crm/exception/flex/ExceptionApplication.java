@@ -6,6 +6,7 @@ import org.springframework.util.ClassUtils;
 import br.com.crm.exception.java.DAOException;
 import br.com.crm.exception.java.ServiceException;
 import br.com.crm.exception.java.SessionException;
+import br.com.crm.model.datatypes.ExceptionType;
 
 import flex.messaging.MessageException;
 
@@ -23,13 +24,13 @@ public class ExceptionApplication implements ExceptionTranslator{
      */
     public MessageException translate(Throwable arg0) {
         MessageException ex =new MessageException();
-        //ex.setCode(ExceptionType.APPLICATION_EXCEPTION.getValor());
+        ex.setCode(ExceptionType.APPLICATION_EXCEPTION.getValor());
         if(arg0 != null){
             if(arg0 instanceof DAOException || arg0 instanceof ServiceException){
-                //ex.setCode(ExceptionType.APPLICATION_ALERT.getValor());
+                ex.setCode(ExceptionType.APPLICATION_ALERT.getValor());
             }else{
                 if(arg0 instanceof SessionException){
-                    //ex.setCode(ExceptionType.APPLICATION_SESSION.getValor());
+                    ex.setCode(ExceptionType.APPLICATION_SESSION.getValor());
                 }
             }
         }

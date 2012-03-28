@@ -19,6 +19,25 @@
         http://www.springframework.org/schema/context/spring-context-3.0.xsd">
 
 
+	<!-- ======================================================================================== -->
+    <!-- ==================== CANAL DE COMUNICACAO REMOTING/SECURED ============================= -->
+    <!-- ======================================================================================== -->
+    <!-- Canal de comunicacao por Remoting -->
+<!-- 	<flex:message-broker> -->
+<!-- 		<flex:remoting-service default-channels="my-amf" /> -->
+<!-- 		<flex:secured /> -->
+<!-- 	</flex:message-broker> -->
+	
+	<!-- ======================================================================================== -->
+    <!-- ============================= TRATAMENTO EXCEPTION ===================================== -->
+    <!-- ======================================================================================== -->
+<!--     <flex:message-broker> -->
+<!--         <flex:exception-translator ref="exceptionApplication"/> -->
+<!--     </flex:message-broker> -->
+ 
+<!--     Bean responsável pelo tratamento de exceptions para o flex -->
+<!--     <bean name="exceptionApplication" class="br.com.crm.exception.flex.ExceptionApplication"/> -->
+    
     <!-- ======================================================================================== -->
     <!-- ================================== RESOURCE BUNDLE ===================================== -->
     <!-- ======================================================================================== -->
