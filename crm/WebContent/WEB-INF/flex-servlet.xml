@@ -11,9 +11,20 @@
 		http://www.springframework.org/schema/flex 
 		http://www.springframework.org/schema/flex/spring-flex-1.5.xsd">
 
-	<flex:message-broker>
-		<flex:exception-translator ref="exceptionApplication" />
-	</flex:message-broker>
+	<!-- ======================================================================================== -->
+    <!-- ============================= TRATAMENTO EXCEPTION ===================================== -->
+    <!-- ======================================================================================== -->
+ 
+    <flex:message-broker>
+        <flex:exception-translator ref="exceptionApplication"/>
+    </flex:message-broker>
+ 
+    <!-- Bean responsável pelo tratamento de exceptions para o flex -->
+    <bean name="exceptionApplication" class="br.com.crm.exception.flex.ExceptionApplication"/>
+
+
+
+
 
 	<flex:message-broker>
 		<flex:remoting-service default-channels="my-amf" />
