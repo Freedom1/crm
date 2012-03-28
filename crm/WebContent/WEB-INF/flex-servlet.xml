@@ -22,14 +22,19 @@
     <!-- Bean responsável pelo tratamento de exceptions para o flex -->
     <bean name="exceptionApplication" class="br.com.crm.exception.flex.ExceptionApplication"/>
 
-
-
-
+	<!-- ======================================================================================== -->
+    <!-- ==================== CANAL DE COMUNICACAO REMOTING/SECURED ============================= -->
+    <!-- ======================================================================================== -->
+    <!-- Canal de comunicacao por Remoting -->
 
 	<flex:message-broker>
 		<flex:remoting-service default-channels="my-amf" />
 		<flex:secured />
 	</flex:message-broker>
+	
+	<!-- ======================================================================================== -->
+    <!-- ================================= COMENTARIOS ========================================== -->
+    <!-- ======================================================================================== -->
  	<!-- Flex-specific Configuration -->
 <!-- 	<flex:message-broker mapping-order="1"> -->
 <!-- 		<flex:message-service -->
