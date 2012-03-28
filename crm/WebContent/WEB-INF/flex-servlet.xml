@@ -10,14 +10,14 @@
 		http://www.springframework.org/schema/context/spring-context-3.0.xsd
 		http://www.springframework.org/schema/flex 
 		http://www.springframework.org/schema/flex/spring-flex-1.5.xsd">
- 
-<!--  	   	<flex:message-broker>   -->
-<!--        <flex:exception-translator ref="exceptionApplication"/> -->
-<!--     </flex:message-broker> -->
-    
+
 	<flex:message-broker>
-	    <flex:remoting-service default-channels="my-amf" />
-	    <flex:secured />
+		<flex:exception-translator ref="exceptionApplication" />
+	</flex:message-broker>
+
+	<flex:message-broker>
+		<flex:remoting-service default-channels="my-amf" />
+		<flex:secured />
 	</flex:message-broker>
  	<!-- Flex-specific Configuration -->
 <!-- 	<flex:message-broker mapping-order="1"> -->
