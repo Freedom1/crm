@@ -14,6 +14,7 @@ import org.springframework.util.Assert;
 import br.com.crm.exception.java.DAOException;
 import br.com.crm.model.entity.PaisModel;
 import br.com.crm.service.IPaisService;
+import br.com.crm.session.ISessionTemplate;
 import br.com.crm.session.MockContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -32,9 +33,19 @@ public class PaisTest {
 	public static void startFlexSessionMock() throws Exception {
 	    Mockit.setUpMocks(MockContext.class);
 	}
-	
+
+	/**************************************************************/
+	/************************* ATRIBUTOS **************************/
+	/**************************************************************/
 	@Autowired
 	IPaisService service;
+	
+	@Autowired
+	ISessionTemplate sessionTemplate;
+	
+	
+	
+	
 	
 	/**
 	 * 
