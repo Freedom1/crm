@@ -1,5 +1,8 @@
 package br.com.crm.service.impl;
 
+import mockit.Mockit;
+
+import org.junit.BeforeClass;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +14,25 @@ import org.springframework.util.Assert;
 import br.com.crm.exception.java.DAOException;
 import br.com.crm.model.entity.PaisModel;
 import br.com.crm.service.IPaisService;
+import br.com.crm.session.MockContext;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("app-test.xml")
 public class PaisTest {
 
+	/**************************************************************/
+	/*********************** INICIALIZACAO ************************/
+	/**************************************************************/
+	/**
+	 * Inicializa o simulador de sessão do flex.
+	 *
+	 * @throws Exception
+	 */
+	@BeforeClass
+	public static void startFlexSessionMock() throws Exception {
+	    Mockit.setUpMocks(MockContext.class);
+	}
+	
 	@Autowired
 	IPaisService service;
 	
