@@ -12,20 +12,20 @@ connect crm/crm
 --------------------------------------------------------------------------------
 
 -- TUTOR
-insert into tb_tutor (id_tutor, tx_descricao) values (1,'Mãe');
-insert into tb_tutor (id_tutor, tx_descricao) values (2,'Pai');
-insert into tb_tutor (id_tutor, tx_descricao) values (3,'Avó');
-insert into tb_tutor (id_tutor, tx_descricao) values (4,'Avô');
-insert into tb_tutor (id_tutor, tx_descricao) values (5,'Tio');
-insert into tb_tutor (id_tutor, tx_descricao) values (6,'Tia');
-insert into tb_tutor (id_tutor, tx_descricao) values (7,'Primo');
-insert into tb_tutor (id_tutor, tx_descricao) values (8,'Prima');
-insert into tb_tutor (id_tutor, tx_descricao) values (9,'Madrasta');
-insert into tb_tutor (id_tutor, tx_descricao) values (10,'Padastro');
+insert into tb_tutor (id_tutor, tx_tutor) values (1,'Mãe');
+insert into tb_tutor (id_tutor, tx_tutor) values (2,'Pai');
+insert into tb_tutor (id_tutor, tx_tutor) values (3,'Avó');
+insert into tb_tutor (id_tutor, tx_tutor) values (4,'Avô');
+insert into tb_tutor (id_tutor, tx_tutor) values (5,'Tio');
+insert into tb_tutor (id_tutor, tx_tutor) values (6,'Tia');
+insert into tb_tutor (id_tutor, tx_tutor) values (7,'Primo');
+insert into tb_tutor (id_tutor, tx_tutor) values (8,'Prima');
+insert into tb_tutor (id_tutor, tx_tutor) values (9,'Madrasta');
+insert into tb_tutor (id_tutor, tx_tutor) values (10,'Padastro');
 
 -- FILIACAO
-insert into tb_filiacao (id_filiacao, tx_nome,in_sexo,id_tutor) values (sq_filiacao.nextval,'Luiza Pessoa de Carvalho','F',1);
-insert into tb_filiacao (id_filiacao, tx_nome,in_sexo,id_tutor) values (sq_filiacao.nextval,'Esteval Gomes dos Santos','M',2);
+--insert into tb_filiacao (id_filiacao, tx_nome,in_sexo,id_tutor) values (sq_filiacao.nextval,'Luiza Pessoa de Carvalho','F',1);
+--insert into tb_filiacao (id_filiacao, tx_nome,in_sexo,id_tutor) values (sq_filiacao.nextval,'Esteval Gomes dos Santos','M',2);
 
 --------------------------------------------------------------------------------
 -------------------------- Data Manipulation Language --------------------------

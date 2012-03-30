@@ -15,6 +15,7 @@ create table tb_documento(
 	tx_lv						varchar2(30)		null,			--Livro da certidao de nascimento
 	dt_emissao					date				null,
 	dt_validade					date				null,
+	id_pessoa                    number(18,0)       not null,--fk
 	id_documento_tipo			number(18,0)		not null
 );
 
@@ -30,20 +31,8 @@ create sequence crm.sq_documento_tipo 				increment by 1 start with 100;
 -- FOREIGN KEY
 alter table tb_documento add constraint fk_documento		foreign key(id_documento_tipo) 		references tb_documento_tipo(id_documento_tipo);
 
---------------------------------------------------------------------------------
---------------------------- Data Definition Language ---------------------------
--------------------------------------- DDL -------------------------------------
------------------------------- CREATE, ALTER, DROP -----------------------------
-------------------------------GRUPO ALUNO/DOCUMENTO ----------------------------
---------------------------------------------------------------------------------
-alter table tb_aluno add constraint fk_aluno_documento foreign key(id_documento) references tb_documento(id_documento);
 
---------------------------------------------------------------------------------
---------------------------- Data Definition Language ---------------------------
--------------------------------------- DDL -------------------------------------
------------------------------- CREATE, ALTER, DROP -----------------------------
-------------------------------GRUPO TUTOR/DOCUMENTO ----------------------------
---------------------------------------------------------------------------------
+
 
 spool off
 exit

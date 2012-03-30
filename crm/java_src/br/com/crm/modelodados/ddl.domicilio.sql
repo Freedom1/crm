@@ -96,7 +96,8 @@ create table tb_domicilio(
 	tx_travessa_2						varchar2(200)				not null,-- Rua Morango
 	tx_complemento						varchar2(200)				not null,-- O numero antigo da casa era 250C
 	tx_ponto_referencia					varchar2(200)				not null, -- Viaduto curu�a
-	id_complemento_tipo					number(18,0)				not null, --FK
+	id_complemento_tipo					number(18,0)				not null,--fK
+	id_pessoa                    		number(18,0)     			not null,--fk
 	id_logradouro						number(18,0)				not null
 );
 -- FOREIGN KEY
@@ -122,31 +123,6 @@ create sequence crm.sq_logradouro_tipo 	increment by 1 start with 100;
 create sequence crm.sq_logradouro 		increment by 1 start with 100;
 create sequence crm.sq_domicilio 			increment by 1 start with 100;
 create sequence crm.sq_complemento_tipo	increment by 1 start with 100;
-
-
---------------------------------------------------------------------------------
---------------------------- Data Definition Language ---------------------------
--------------------------------------- DDL -------------------------------------
------------------------------- CREATE, ALTER, DROP -----------------------------
-------------------------------GRUPO ALUNO/DOMICILIO ----------------------------
---------------------------------------------------------------------------------
-alter table tb_aluno add constraint fk_aluno_domicilio foreign key(id_domicilio) references tb_domicilio(id_domicilio);
-
---------------------------------------------------------------------------------
---------------------------- Data Definition Language ---------------------------
--------------------------------------- DDL -------------------------------------
------------------------------- CREATE, ALTER, DROP -----------------------------
----------------------------------GRUPO ALUNO/PAIS ------------------------------
---------------------------------------------------------------------------------
-alter table tb_aluno add constraint fk_aluno_pais foreign key(id_pais) references tb_pais(id_pais);
-
---------------------------------------------------------------------------------
---------------------------- Data Definition Language ---------------------------
--------------------------------------- DDL -------------------------------------
------------------------------- CREATE, ALTER, DROP -----------------------------
-------------------------------- GRUPO ALUNO/ESTADO -----------------------------
---------------------------------------------------------------------------------
-alter table tb_aluno add constraint fk_aluno_estado foreign key(id_estado) references tb_estado(id_estado);
 
 
 spool off
