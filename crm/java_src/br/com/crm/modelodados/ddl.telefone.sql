@@ -14,7 +14,7 @@ create table tb_telefone(
     tx_observacao                	varchar2(200)     	not null,--observacao como recado
     in_preferencial               	char(1)         	not null,--informa se o telefone é preferencial para receber ligacoes 
     id_telefone_tipo            	number(18,0)     	not null,--fk(rg)
-    id_pessoa                    	number(18,0)     	not null--fk
+    id_pessoa                    	number(18,0)     	not null--fk(rg)
 );
 
 create table tb_telefone_tipo(
@@ -26,7 +26,8 @@ create table tb_telefone_tipo(
 create sequence crm.sq_telefone                 increment by 1 start with 100;
 create sequence crm.sq_telefone_tipo            increment by 1 start with 100;
 
-alter table tb_telefone  add constraint fk_telefone_tipo	foreign key(id_telefone_tipo)		references tb_telefone_tipo(id_telefone_tipo);
+alter table tb_telefone 	add constraint fk_telefone_tipo		foreign key(id_telefone_tipo)		references tb_telefone_tipo(id_telefone_tipo);
+alter table tb_telefone 	add constraint fk_telefone_pessoa 	foreign key(id_pessoa) 				references tb_pessoa(id_pessoa);
 
 spool off
 exit

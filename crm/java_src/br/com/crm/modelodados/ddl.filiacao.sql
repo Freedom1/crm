@@ -15,7 +15,7 @@ create table tb_tutor(
 
 create table tb_filiacao(
     id_filiacao                  number(18,0)     not null,
-    id_pessoa                    number(18,0)     not null,--fk(rl) - Filho
+    id_pessoa                    number(18,0)     not null,--fk(rg) - Filho
     id_tutor                     number(18,0)     not null --fk(gp) - Tutor(pai/mae e etc)
 );
 
@@ -25,6 +25,7 @@ alter table tb_tutor add constraint pk_tutor primary key(id_tutor);
 
 -- FOREIGN KEY
 alter table tb_filiacao add constraint fk_filiacao_tutor foreign key(id_tutor) references tb_tutor(id_tutor);
+alter table tb_filiacao add constraint fk_filiacao_pessoa foreign key(id_pessoa) references tb_pessoa(id_pessoa);
 
 -- SEQUENCE
 -- Importante saber que uma sequence pode ser usado para mais de uma tabela.
