@@ -1,4 +1,4 @@
-spool ddl.crm.txt
+spool logs\ddl.crm.txt
 
 drop user crm cascade;
 

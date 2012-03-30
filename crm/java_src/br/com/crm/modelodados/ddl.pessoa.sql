@@ -1,5 +1,5 @@
 
-spool ddl.pessoa.txt
+spool logs\ddl.pessoa.txt
 
 connect crm/crm
 

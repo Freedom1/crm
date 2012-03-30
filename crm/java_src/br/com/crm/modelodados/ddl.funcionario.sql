@@ -1,5 +1,5 @@
 
-spool ddl.funcionario.txt
+spool logs\ddl.funcionario.txt
 
 connect crm/crm
 --------------------------------------------------------------------------------

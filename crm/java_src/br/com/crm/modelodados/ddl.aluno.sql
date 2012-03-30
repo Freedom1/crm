@@ -1,5 +1,5 @@
 
-spool ddl.aluno.txt
+spool logs\ddl.aluno.txt
 
 connect crm/crm
 --------------------------------------------------------------------------------

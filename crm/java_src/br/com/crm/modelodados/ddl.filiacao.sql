@@ -1,5 +1,5 @@
 
-spool ddl.filiacao.txt
+spool logs\ddl.filiacao.txt
 
 connect crm/crm
 --------------------------------------------------------------------------------

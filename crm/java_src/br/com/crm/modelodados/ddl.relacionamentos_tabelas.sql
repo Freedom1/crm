@@ -1,4 +1,4 @@
-spool ddl.relacionamento_tabelas.txt
+spool logs\ddl.relacionamento_tabelas.txt
 
 connect crm/crm
 
@@ -9,6 +9,14 @@ connect crm/crm
 ---------------------------- RL PESSOA/DOCUMENTO ----------------------------
 --------------------------------------------------------------------------------
 alter table tb_documento add constraint fk_documento_pessoa foreign key(id_pessoa) references tb_pessoa(id_pessoa);
+
+--------------------------------------------------------------------------------
+--------------------------- Data Definition Language ---------------------------
+-------------------------------------- DDL -------------------------------------
+------------------------------ CREATE, ALTER, DROP -----------------------------
+------------------------------- RL PESSOA/TELEFONE -----------------------------
+--------------------------------------------------------------------------------
+alter table tb_telefone add constraint fk_telefone_pessoa foreign key(id_pessoa) references tb_pessoa(id_pessoa);
 
 --------------------------------------------------------------------------------
 --------------------------- Data Definition Language ---------------------------

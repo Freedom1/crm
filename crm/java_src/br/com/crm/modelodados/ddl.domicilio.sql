@@ -1,4 +1,4 @@
-spool ddl.domicilio.txt
+spool logs\ddl.domicilio.txt
 
 connect crm/crm
 

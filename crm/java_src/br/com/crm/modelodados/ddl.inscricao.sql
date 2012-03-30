@@ -1,5 +1,5 @@
 
-spool ddl.inscricao.txt
+spool logs\ddl.inscricao.txt
 
 connect crm/crm
 

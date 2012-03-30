@@ -1,5 +1,5 @@
 
-spool ddl.matricula.txt
+spool logs\ddl.matricula.txt
 
 connect crm/crm
 

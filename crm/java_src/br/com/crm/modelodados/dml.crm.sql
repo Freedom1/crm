@@ -1,4 +1,4 @@
-spool dml.crm.txt
+spool logs\dml.crm.txt
 connect crm/crm
 
 --Antes de alterar verificar se o eclipse está abrindo no formato ISO-8859-1
