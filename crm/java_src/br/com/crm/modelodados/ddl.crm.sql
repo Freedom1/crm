@@ -28,7 +28,7 @@ create table tb_aluno(
 	id_naciolidade				number(18,0)	not null,
 	dt_atualizacao				date			null,
 	id_domicilio 				number(18,0)	not null,
-	id_documento_campo 			number(18,0)	not null,	
+	id_documento 				number(18,0)	not null,	
 	id_estado					number(18,0)	not null, --Natural
 	id_pais						number(18,0)	not null  --Nacionalidade
 );

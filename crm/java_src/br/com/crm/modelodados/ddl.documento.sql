@@ -23,15 +23,9 @@ create table tb_documento_tipo(
 	tx_documento_tipo					varchar2(200)		not null		--RG/CPF/CNPJ/PIS
 );
 
-create table tb_documento_campos(
-	id_documento_campos 			number(18,0)		not null		constraint pk_documento_campos primary key,
-	tx_orgao_emissor				varchar2(200)		not null		--Orgao Emissor
-);
-
 -- SEQUENCE
 create sequence crm.sq_documento 					increment by 1 start with 100;
-create sequence crm.sq_documento_tipo 			increment by 1 start with 100;
-create sequence crm.sq_documento_campos 			increment by 1 start with 100;
+create sequence crm.sq_documento_tipo 				increment by 1 start with 100;
 
 -- FOREIGN KEY
 alter table tb_documento add constraint fk_documento		foreign key(id_documento_tipo) 		references tb_documento_tipo(id_documento_tipo);
@@ -42,6 +36,7 @@ alter table tb_documento add constraint fk_documento		foreign key(id_documento_t
 ------------------------------ CREATE, ALTER, DROP -----------------------------
 ------------------------------GRUPO ALUNO/DOCUMENTO ----------------------------
 --------------------------------------------------------------------------------
+alter table tb_aluno add constraint fk_aluno_documento foreign key(id_documento) references tb_documento(id_documento);
 
 --------------------------------------------------------------------------------
 --------------------------- Data Definition Language ---------------------------

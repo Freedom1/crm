@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<swiz:BeanProvider xmlns:swiz="http://swiz.swizframework.org" xmlns:mx="http://www.adobe.com/2006/mxml" >
+	
+	<!-- Configurações AMF -->
+	<swiz:ChannelSetHelper id="amf">
+		<swiz:serverName>localhost</swiz:serverName>
+		<swiz:serverPort>8080</swiz:serverPort>
+		<swiz:contextRoot>/crm</swiz:contextRoot>
+	</swiz:ChannelSetHelper>
+<!--	<swiz:ChannelSetHelper id="amf">
+		<swiz:serverName>192.168.0.17</swiz:serverName>
+		<swiz:serverPort>6080</swiz:serverPort>
+		<swiz:contextRoot>/ARQ01</swiz:contextRoot>
+	</swiz:ChannelSetHelper>-->
+	
+	<mx:SecureAMFChannel url="http://localhost:8080/crm"/>
+	
+<!--	<mx:SecureAMFChannel url="http://192.168.0.17:6080/ARQ01"/>-->
+	
+	<!-- Lista de Objetos para acesso remotos-->
+<!--	<mx:RemoteObject id="loginService" destination="loginService" channelSet="{amf}" />
+	<mx:RemoteObject id="assuntoService" destination="assuntoService" channelSet="{amf}"/>-->
+</swiz:BeanProvider>

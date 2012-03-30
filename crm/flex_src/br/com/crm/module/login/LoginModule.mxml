@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<s:Module xmlns:fx="http://ns.adobe.com/mxml/2009" 
-		  xmlns:s="library://ns.adobe.com/flex/spark" 
-		  xmlns:mx="library://ns.adobe.com/flex/mx" width="100%" height="100%">
+<s:Module xmlns:fx="http://ns.adobe.com/mxml/2009"
+		  xmlns:s="library://ns.adobe.com/flex/spark"
+		  xmlns:mx="library://ns.adobe.com/flex/mx"
+		  xmlns:view="br.com.crm.module.login.view.*"
+		  width="100%" height="100%">
 	<fx:Declarations>
 		<!-- Place non-visual elements (e.g., services, value objects) here -->
 	</fx:Declarations>
-	<s:Label x="10" y="40" text="Usuário"/>
-	<s:TextInput x="63" y="30"/>
-	<s:Label x="229" y="40" text="Senha"/>
-	<s:TextInput x="274" y="30"/>
-	<s:Button x="332" y="60" label="Button"/>
-	<s:Label x="10" y="10" text="Versão: 1.0.0.0"/>
+	<view:LoginView/>
+
 </s:Module>
