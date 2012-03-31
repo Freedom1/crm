@@ -20,5 +20,9 @@ create table tb_tipo_ensino(
     tx_tipo_ensino                varchar2(200)     not null--Educação infantil/Ensino fundamental/Ensino médio/
 );
 
+-- SEQUENCE
+create sequence crm.sq_serie			       increment by 1 start with 100;
+create sequence crm.tipo_ensino			       increment by 1 start with 100;
+
 spool off
 exit
