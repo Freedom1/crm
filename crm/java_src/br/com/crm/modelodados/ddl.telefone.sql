@@ -14,7 +14,7 @@ create table tb_telefone(
     tx_observacao                	varchar2(200)     	not null,--observacao como recado
     in_preferencial               	char(1)         	not null,--informa se o telefone é preferencial para receber ligacoes 
     id_telefone_tipo            	number(18,0)     	not null,--fk(rg)
-    id_pessoa                    	number(18,0)     	not null--fk(rg)--Quem é o cantor?
+    id_pessoa                    	number(18,0)     	not null--fk(rg)--Quem é o cantor? Eli
 );
 
 create table tb_telefone_tipo(
